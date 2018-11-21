@@ -1,0 +1,14 @@
+在Ubuntu下安装nginx apt-get install nginx
+nginx 配置文件 /etc/nginx/nginc.conf
+修改配置文件之前，先将include注释掉，不然会存在问题
+server{
+                listen 80;
+                server_name localhost;
+                root /home/czc;
+                index index.html;
+
+                location / {
+                        try_files $uri $uri/ =404;
+                }
+        }
+即可访问/home/czc下面的静态文件了！
